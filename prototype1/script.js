@@ -41,7 +41,13 @@ const testSphere =new THREE.Mesh(sphereGeometry, sphereMaterial)
 Scene.add(testSphere)
 testSphere.position.set(0,0,0)
 
+//test cube
+const cubeGeometry = new THREE.cubeGeometry()
+const cubeMaterial = new THREE.MeshNormalMaterial()
+const testCube =new THREE.Mesh(cubeGeometry, cubeMaterial)
 
+Scene.add(testcube)
+testCube.position.set(0,0,0)
 
 /*******************
 ** Animation Loop **
