@@ -41,13 +41,13 @@ const testSphere =new THREE.Mesh(sphereGeometry, sphereMaterial)
 Scene.add(testSphere)
 testSphere.position.set(0,0,0)
 
-//test cube
-const cubeGeometry = new THREE.cubeGeometry()
-const cubeMaterial = new THREE.MeshNormalMaterial()
-const testCube =new THREE.Mesh(cubeGeometry, cubeMaterial)
+//test box
+const boxGeometry = new THREE.BoxGeometry(1)
+const boxMaterial = new THREE.MeshNormalMaterial()
+const testbox =new THREE.Mesh(boxGeometry, boxMaterial)
 
-Scene.add(testcube)
-testCube.position.set(0,0,0)
+Scene.add(testbox)
+testbox.position.set(0,0,0)
 
 /*******************
 ** Animation Loop **
@@ -61,6 +61,9 @@ const animation = () =>
     
     // Animate Testsphere
     testSphere.position.y = Math.sin(elapsedTime)
+
+    //animate test box
+    testbox.position.x = Math.cos (elapsedTime)
 
     //Renderer
     Renderer.render(Scene, camera)
