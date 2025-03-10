@@ -12,13 +12,30 @@ import * as dat from "lil-gui"
     width : window.innerWidth,
     height : window.innerHeight,
     aspectRatio : window.innerWidth / window.innerHeight
- }
+}
 
 
 
 /**********
 ** SCENE **
 **********/
+
+//Resizing
+window.addEventListener('resize', () => 
+{
+    // update sizes
+    sizes.width = window.innerWidth
+    sizes.height = window.innerHeight
+    sizes.aspectRatio = window.innerWidth / window.innerHeight
+
+    // update camera
+    camera.aspect = sizes. aspectRatio
+    camera.updateProjectionMatrix()
+
+    //update renderer
+    Renderer.setSize(sizes.width, sizes.height)
+    Renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+})
 
 //Canvas
 const canvas= document.querySelector('.webgl')
